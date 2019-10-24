@@ -7,11 +7,11 @@ import store from './store';
 function Root() {
   return (
     <Provider store={store}>
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
-  )
+  );
 }
 
 export default Root;
