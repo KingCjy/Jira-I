@@ -11,7 +11,7 @@ const devTools = isDev && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 const composeEnhancers = devTools || compose;
 const middlewares = [sagaMiddleware];
 
-const configure = (preloadedState) => {
+const configure = preloadedState => {
   const store = createStore(
     modules,
     preloadedState,
