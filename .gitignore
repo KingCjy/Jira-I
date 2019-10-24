@@ -160,3 +160,26 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# ========Jira-I-Front========
+# dependencies
+Jira-I-Front/node_modules
+Jira-I-Front/.pnp
+Jira-I-Front/.pnp.js
+
+# testing
+Jira-I-Front/coverage
+
+# production
+Jira-I-Front/build
+
+# misc
+Jira-I-Front/.DS_Store
+Jira-I-Front/.env.local
+Jira-I-Front/.env.development.local
+Jira-I-Front/.env.test.local
+Jira-I-Front/.env.production.local
+
+Jira-I-Front/npm-debug.log*
+Jira-I-Front/yarn-debug.log*
+Jira-I-Front/yarn-error.log*
+# ========Jira-I-Front========
