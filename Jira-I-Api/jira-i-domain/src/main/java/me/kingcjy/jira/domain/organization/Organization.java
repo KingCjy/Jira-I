@@ -1,6 +1,7 @@
 package me.kingcjy.jira.domain.organization;
 
 import lombok.Builder;
+import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
+@Getter
 @Entity
 public class Organization {
 

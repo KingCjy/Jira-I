@@ -1,6 +1,7 @@
 package me.kingcjy.jira.domain.issue;
 
 
+import lombok.Builder;
 import lombok.Getter;
 import me.kingcjy.jira.domain.member.Member;
 import org.hibernate.annotations.CreationTimestamp;
@@ -23,8 +24,16 @@ public class Issue {
 
     private Member responsibility;
 
+    private Member createdMember;
+
     @CreationTimestamp
     private LocalDateTime createdDateTime;
 
-
+    @Builder
+    public Issue(Long issuId, String name, Member responsibility, Member createdMember) {
+        this.issuId = issuId;
+        this.name = name;
+        this.responsibility = responsibility;
+        this.createdMember = createdMember;
+    }
 }
