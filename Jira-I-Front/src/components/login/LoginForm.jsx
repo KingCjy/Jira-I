@@ -1,22 +1,30 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  loginWrap: {
+  grid: {
     height: '100%',
   },
-  paper: {
-    width: 500,
-    padding: 20,
+  loginWrap: {
+    width: 400,
+    textAlign: 'center',
   },
-  loginBar: {
-    width: '100%',
-    backgroundColor: theme.indigo,
+  loginTypo: {
+    marginTop: theme.spacing(2),
+    color: '#ccc',
+  },
+  paper: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
+    padding: theme.spacing(4),
   },
   form: {
     display: 'flex',
@@ -24,15 +32,17 @@ const useStyles = makeStyles(theme => ({
   },
   textField: {
     display: 'block',
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+  },
+  rememberCheck: {
+    color: '#aaa',
+    marginTop: theme.spacing(2),
   },
   button: {
-    margin: theme.spacing(1),
+    marginTop: theme.spacing(2),
   },
 }));
 
-const LoginForm = () => {
+const LoginForm = ({ email, password, check, onChange }) => {
   const classes = useStyles();
 
   return (
@@ -40,38 +50,71 @@ const LoginForm = () => {
       container
       justify="center"
       alignItems="center"
-      className={classes.loginWrap}
+      className={classes.grid}
     >
-      <Paper className={classes.paper}>
-        <div className={classes.loginBar}>로그인</div>
-        <form className={classes.form} noValidate autoComplete="off">
-          <TextField
-            required
-            label="ID"
-            className={classes.textField}
-            margin="normal"
-            fullWidth
-          />
-          <TextField
-            required
-            label="PW"
-            className={classes.textField}
-            type="password"
-            autoComplete="current-password"
-            margin="normal"
-            fullWidth
-          />
-          <Button
-            type="submit"
-            color="primary"
-            variant="contained"
-            fullWidth
-            className={classes.button}
-          >
-            Login
-          </Button>
-        </form>
-      </Paper>
+      <div className={classes.loginWrap}>
+        <Typography variant="h2" color="primary">
+          Jira-I
+        </Typography>
+        <Typography variant="h4" className={classes.loginTypo}>
+          Sign In
+        </Typography>
+
+        <Paper className={classes.paper}>
+          <form className={classes.form} noValidate autoComplete="off">
+            <TextField
+              label="Email"
+              fullWidth
+              required
+              className={classes.textField}
+              name="email"
+              value={email}
+              onChange={onChange}
+            />
+            <TextField
+              required
+              label="Password"
+              autoComplete="current-password"
+              margin="normal"
+              fullWidth
+              type="password"
+              className={classes.textField}
+              name="password"
+              value={password}
+              onChange={onChange}
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="check"
+                  checked={check}
+                  value={check}
+                  onChange={onChange}
+                  color="primary"
+                />
+              }
+              label="Remember me"
+              className={classes.rememberCheck}
+            />
+            <Button
+              type="submit"
+              color="primary"
+              variant="contained"
+              fullWidth
+              className={classes.button}
+            >
+              CONTINUE
+            </Button>
+          </form>
+        </Paper>
+
+        <Typography variant="caption" className={classes.loginTypo}>
+          Dont't have an account?
+        </Typography>
+        <Typography variant="h6" color="primary">
+          Create account
+        </Typography>
+      </div>
     </Grid>
   );
 };
