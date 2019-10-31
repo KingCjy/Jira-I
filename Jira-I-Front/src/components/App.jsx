@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+// import Header from './template/Header';
+import * as pages from '../pages/index';
+import '../styles/main.scss';
 
 function App() {
-  return <div>full 리무트</div>;
+  return (
+    <Fragment>
+      {/* <Header></Header> */}
+      <pages.Login></pages.Login>
+    </Fragment>
+  );
 }
 
 export default App;
