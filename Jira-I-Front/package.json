@@ -75,8 +75,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "prettier",
-      "airbnb"
+      "react-app",
+      "prettier"
     ],
     "rules": {
       "react/prefer-stateless-function": 0,
