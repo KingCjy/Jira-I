@@ -10,20 +10,20 @@ function ContextGlobal() {
         </div>
         <div className="list">
           <ul>
-            <li clasName="active">
-              <a href="">내 작업</a>
+            <li className="active">
+              <a href="/project">내 작업</a>
             </li>
             <li>
-              <a href="">내 작업</a>
+              <a href="/project">내 작업</a>
             </li>
             <li>
-              <a href="">내 작업</a>
+              <a href="/project">내 작업</a>
             </li>
             <li>
-              <a href="">내 작업</a>
+              <a href="/project">내 작업</a>
             </li>
             <li>
-              <a href="">내 작업</a>
+              <a href="/project">내 작업</a>
             </li>
           </ul>
         </div>
