@@ -1,0 +1,25 @@
+.nav_global {
+  transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1),
+    color 0.3s cubic-bezier(0.2, 0, 0, 1);
+  width: 64px;
+  height: calc(100vh - 0px);
+  background-color: #3f51b5;
+  color: #deebff;
+  fill: #3f51b5;
+  .shadow_bar {
+    margin-left: 64px;
+    bottom: 0px;
+    left: -6px;
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    width: 6px;
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.2) 0px,
+      rgba(0, 0, 0, 0.2) 1px,
+      rgba(0, 0, 0, 0.1) 1px,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}
