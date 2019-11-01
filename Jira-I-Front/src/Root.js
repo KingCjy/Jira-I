@@ -5,7 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import App from './components/App';
 import store from './store';
 
-
 function Root() {
   return (
     <Provider store={store}>

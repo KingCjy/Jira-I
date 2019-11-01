@@ -1,16 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 // import Header from './template/Header';
 import * as pages from 'pages/index';
-
-import 'styles/utils.scss';
-import 'styles/main.scss';
+import '../styles/main.scss';
 
 function App() {
   return (
-    <Fragment>
-      {/* <Header></Header> */}
-      <pages.Login />
-    </Fragment>
+    <Switch>
+      <Route exact path="/" component={pages.Login} />
+      <Route exact path="/project" component={pages.Project} />
+    </Switch>
   );
 }
 

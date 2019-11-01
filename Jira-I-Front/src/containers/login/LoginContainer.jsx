@@ -6,15 +6,14 @@ import * as loginActions from 'store/modules/login';
 import LoginForm from 'components/login/LoginForm';
 
 class LoginFormContainer extends Component {
-  handleChange = e => {
+  handleChange = (e, name) => {
     const { LoginActions } = this.props;
-
-    console.log(e.target.name);
-    console.log(e.target.value);
+    let key = name ? name : e.target.name;
+    let value = name ? e.target.checked : e.target.value;
 
     LoginActions.changeInput({
-      key: e.target.name,
-      value: e.target.value,
+      key,
+      value,
     });
   };
 
@@ -26,6 +25,7 @@ class LoginFormContainer extends Component {
         email={email}
         password={password}
         check={check}
+        onCheck={this.handleCheckChange}
         onChange={this.handleChange}
       />
     );

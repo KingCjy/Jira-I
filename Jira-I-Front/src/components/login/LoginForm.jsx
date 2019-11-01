@@ -88,8 +88,8 @@ const LoginForm = ({ email, password, check, onChange }) => {
                 <Checkbox
                   name="check"
                   checked={check}
-                  value={check}
-                  onChange={onChange}
+                  value="check"
+                  onChange={e => onChange(e, 'check')}
                   color="primary"
                 />
               }
