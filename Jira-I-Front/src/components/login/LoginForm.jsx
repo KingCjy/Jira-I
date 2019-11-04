@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const LoginForm = ({ email, password, check, onChange }) => {
+const LoginForm = ({ email, password, check, onChange, onSubmit }) => {
   const classes = useStyles();
 
   return (
@@ -61,8 +61,14 @@ const LoginForm = ({ email, password, check, onChange }) => {
         </Typography>
 
         <Paper className={classes.paper}>
-          <form className={classes.form} noValidate autoComplete="off">
+          <form
+            className={classes.form}
+            noValidate
+            autoComplete="off"
+            onSubmit={onSubmit}
+          >
             <TextField
+              variant="outlined"
               label="Email"
               fullWidth
               required
@@ -73,6 +79,7 @@ const LoginForm = ({ email, password, check, onChange }) => {
             />
             <TextField
               required
+              variant="outlined"
               label="Password"
               autoComplete="current-password"
               margin="normal"
