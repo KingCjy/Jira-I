@@ -4,11 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -43,7 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const LoginForm = ({ email, password, check, onChange, onSubmit }) => {
+const JoinForm = ({ email, password, check, onChange, onSubmit }) => {
   const classes = useStyles();
 
   return (
@@ -58,7 +55,7 @@ const LoginForm = ({ email, password, check, onChange, onSubmit }) => {
           Jira-I
         </Typography>
         <Typography variant="h4" className={classes.loginTypo}>
-          Sign In
+          Sign Up
         </Typography>
 
         <Paper className={classes.paper}>
@@ -72,6 +69,29 @@ const LoginForm = ({ email, password, check, onChange, onSubmit }) => {
               variant="outlined"
               label="Email"
               fullWidth
+              margin="normal"
+              required
+              className={classes.textField}
+              name="email"
+              value={email}
+              onChange={onChange}
+            />
+            <TextField
+              variant="outlined"
+              label="PhoneNuber"
+              fullWidth
+              margin="normal"
+              required
+              className={classes.textField}
+              name="email"
+              value={email}
+              onChange={onChange}
+            />
+            <TextField
+              variant="outlined"
+              label="UserName"
+              fullWidth
+              margin="normal"
               required
               className={classes.textField}
               name="email"
@@ -91,19 +111,6 @@ const LoginForm = ({ email, password, check, onChange, onSubmit }) => {
               value={password}
               onChange={onChange}
             />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  name="check"
-                  checked={check}
-                  value="check"
-                  onChange={e => onChange(e, 'check')}
-                  color="primary"
-                />
-              }
-              label="Remember me"
-              className={classes.rememberCheck}
-            />
             <Button
               type="submit"
               color="primary"
@@ -111,20 +118,13 @@ const LoginForm = ({ email, password, check, onChange, onSubmit }) => {
               fullWidth
               className={classes.button}
             >
-              LOGIN
+              SIGN UP
             </Button>
           </form>
         </Paper>
-
-        <Typography variant="caption" className={classes.loginTypo}>
-          Dont't have an account?
-        </Typography>
-        <Typography variant="h6" color="primary">
-          <Link to="/join">Create account</Link>
-        </Typography>
       </div>
     </Grid>
   );
 };
 
-export default LoginForm;
+export default JoinForm;
